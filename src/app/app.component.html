@@ -1,0 +1,11 @@
+<div>
+  <app-searcher (selectedWord)="onWordSelected($event)"></app-searcher>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4" 
+    style="margin-bottom: 50px;"
+    *ngFor="for let tweet of tweets">
+      <app-tweet 
+      [tweet]= "tweet"></app-tweet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.tweet-container {
+    background-color: rgba(29, 161, 242, 1.00);
+    position: absolute;
+    width: calc(30% - 30px);
+    margin-left: 2.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+}
+
+.tweet-container > a {
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.tweet-text {
+    text-align: justify;
+    display: none;
+}
+
+.showMore {
+    z-index: 6;
+}
+
+.hideTweet {
+    z-index: 5;
+}

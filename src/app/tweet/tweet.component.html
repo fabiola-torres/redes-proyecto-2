@@ -1,0 +1,29 @@
+<div class="card" style="height: 100%; width: 100%; margin-left: 10px; ">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <img src="{{tweet.user.profile_image_url}}" alt="" class="card-img">
+            </div>
+            <div class="col-8">
+                <h5>{{tweet.user.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@{{tweet.user.screen_name}}</h6>
+            </div>
+        </div>
+        <hr>
+        <p class="card-text">{{tweet.full_text.substring(0,40)}}...</p>
+    </div>
+</div>
+<div class="tweet-container"
+[ngClass]="showMore ? 'showMore' : 'hideTweet' ">
+    <div id="{{tweet.id_str}}" class="tweet-text">
+        {{pretty(tweet.created_at)}}
+        <hr>
+        {{tweet.full_text}}
+    </div>
+    <a *ngIf="showMore; else hidenTweetText" (click)="toggle()">Ocultar</a>
+    <ng-template #hidenTweetText>
+        <a (click)="toggle()">
+            Ver más
+        </a>
+    </ng-template>
+</div>
